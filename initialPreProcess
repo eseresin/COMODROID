@@ -1,0 +1,15 @@
+#!/bin/bash
+
+export PATH=$PATH:/home/android/tools/android/android-sdk-linux_x86/tools/
+export PATH=$PATH:/home/android/tools/android/android-sdk-linux_x86/platform-tools/
+sh ./startemu.sh firsttime
+
+file="/home/android/tools/listofAPKs/list.txt"
+
+while IFS= read -r line
+do
+    echo "$line"
+cd /home/android/tools/DroidBox23
+pwd
+./droidbox.sh /home/android/tools/APKs/$line 30 > /home/android/tools/reports/$line.txt
+done <"$file"
