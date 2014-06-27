@@ -1,0 +1,10 @@
+#!/bin/bash
+
+export PATH=$PATH:/home/android/tools/android/android-sdk-linux_x86/tools/
+export PATH=$PATH:/home/android/tools/android/android-sdk-linux_x86/platform-tools/
+sh ./startemu.sh firsttime
+max=5
+for ((i=1; i<=$max; ++i )) ;
+do
+     sh ./droidbox.sh $1 15
+done
